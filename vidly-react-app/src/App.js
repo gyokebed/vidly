@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { connect } from "react-redux";
 import Movies from "./components/movies";
 import MovieForm from "./components/movieForm";
 import Customers from "./components/customers";
@@ -12,6 +13,8 @@ import RegisterForm from "./components/registerForm";
 import Logout from "./components/logout";
 import ProtectedRoute from "./components/common/protectedRoute";
 import auth from "./services/authService";
+import { setCurrentUser } from "./redux/user/user.actions";
+
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
@@ -52,4 +55,9 @@ class App extends Component {
   }
 }
 
+// const mapDispatchToProps = dispatch => ({
+//   setCurrentUser: user => dispatch(setCurrentUser(user))
+// });
+
+// export default connect(null, mapDispatchToProps)(App);
 export default App;

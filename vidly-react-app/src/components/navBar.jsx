@@ -1,7 +1,9 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { connect } from "react-redux";
 
 const NavBar = ({ user }) => {
+  console.log(user, "User");
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
@@ -55,4 +57,9 @@ const NavBar = ({ user }) => {
   );
 };
 
+// const mapStateToProps = state => ({
+//   user: state.user.currentUser
+// });
+
+// export default connect(mapStateToProps)(NavBar);
 export default NavBar;
